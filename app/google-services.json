@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "968663807395",
+    "project_id": "facebookclone-osnic",
+    "storage_bucket": "facebookclone-osnic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:968663807395:android:0c1e9009667c31c67bd616",
+        "android_client_info": {
+          "package_name": "com.example.facebookclone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuw-7hwF4Ng21vjiMtLKnONWKArimFjLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
