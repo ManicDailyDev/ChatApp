@@ -7,8 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.facebookclone.R
 import com.example.facebookclone.DataClasses.User
+import com.example.facebookclone.R
 
 class OnlineUserAdapter(private val onClick: (User) -> Unit) : RecyclerView.Adapter<OnlineUserAdapter.ViewHolder>() {
 
@@ -42,13 +42,18 @@ class OnlineUserAdapter(private val onClick: (User) -> Unit) : RecyclerView.Adap
         private val userImage: ImageView = itemView.findViewById(R.id.imageViewUserProfile)
 
         fun bind(user: User) {
-            userName.text = user.name
-            userStatus.text = if (user.isOnline) "Online" else "Offline"
+            // Concatenate first name and last name to form the full name
+            userName.text = "${user.firstName} ${user.lastName}"
+
+            // Use onlineStatus instead of isOnline
+            userStatus.text = if (user.onlineStatus) "Online" else "Offline"
+
             // Load the user image if available
             Glide.with(itemView.context).load(user.profileImageUrl).into(userImage)
         }
     }
 }
+
 
 
 

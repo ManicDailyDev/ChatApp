@@ -32,7 +32,7 @@ class ChatAdapter : RecyclerView.Adapter<ChatAdapter.MessageViewHolder>() {
 
     inner class MessageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(message: Message) {
-            itemView.findViewById<TextView>(R.id.textViewMessageText).text = message.messageText
+            itemView.findViewById<TextView>(R.id.textViewMessageText).text = message.text
             // Set other message details as needed
         }
     }

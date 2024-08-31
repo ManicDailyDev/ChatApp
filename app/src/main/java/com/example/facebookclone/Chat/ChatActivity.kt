@@ -8,6 +8,8 @@ import com.example.facebookclone.Fragment.MessageFragment
 import com.example.facebookclone.Fragment.ProfileFragment
 import com.example.facebookclone.R
 import com.example.facebookclone.databinding.ActivityChatBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
 
 class ChatActivity : AppCompatActivity() {
 

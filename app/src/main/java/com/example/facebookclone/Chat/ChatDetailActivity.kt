@@ -1,8 +1,10 @@
 package com.example.facebookclone.Chat
 
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.facebookclone.DataClasses.Message
+import com.example.facebookclone.adapter.MessageAdapter
 import com.example.facebookclone.databinding.ActivityChatBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -11,7 +13,7 @@ class ChatDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityChatBinding
     private lateinit var db: FirebaseFirestore
-    private lateinit var messagesAdapter: MessagesAdapter
+    private lateinit var messagesAdapter: MessageAdapter
     private lateinit var userId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +25,7 @@ class ChatDetailActivity : AppCompatActivity() {
         db = FirebaseFirestore.getInstance()
 
         binding.recyclerViewMessages.layoutManager = LinearLayoutManager(this)
-        messagesAdapter = MessagesAdapter()
+        messagesAdapter = MessageAdapter() // Correctly instantiate MessageAdapter
         binding.recyclerViewMessages.adapter = messagesAdapter
 
         loadMessages()
