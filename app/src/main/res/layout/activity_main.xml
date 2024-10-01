@@ -53,6 +53,7 @@
             android:id="@+id/usernameEditText1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="a@gmail.com"
             android:background="@drawable/rounded_edittext_background"
             android:inputType="text"
             android:textAlignment="center"
@@ -81,6 +82,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordEditText1"
             android:layout_width="match_parent"
+            android:text="123456789"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_edittext_background"
             android:inputType="textPassword"

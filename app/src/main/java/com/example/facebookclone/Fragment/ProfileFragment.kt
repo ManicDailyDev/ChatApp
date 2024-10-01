@@ -41,7 +41,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         val user = FirebaseAuth.getInstance().currentUser
         val db = FirebaseFirestore.getInstance()
-        val userRef = db.collection("users").document(user!!.uid)
+        val userRef = db.collection("users").document(user?.uid ?: "")
 
         userRef.get()
             .addOnSuccessListener { document ->

@@ -6,8 +6,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.facebookclone.DataClasses.Message
 import com.example.facebookclone.adapter.MessageAdapter
 import com.example.facebookclone.databinding.ActivityChatBinding
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
+import java.util.UUID
+import kotlin.random.Random
 
 class ChatDetailActivity : AppCompatActivity() {
 
@@ -15,6 +19,7 @@ class ChatDetailActivity : AppCompatActivity() {
     private lateinit var db: FirebaseFirestore
     private lateinit var messagesAdapter: MessageAdapter
     private lateinit var userId: String
+    val realtimeDatabase = FirebaseDatabase.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +33,7 @@ class ChatDetailActivity : AppCompatActivity() {
         messagesAdapter = MessageAdapter() // Correctly instantiate MessageAdapter
         binding.recyclerViewMessages.adapter = messagesAdapter
 
-        loadMessages()
+//        loadMessages()
 
         binding.buttonSendMessage.setOnClickListener {
             sendMessage()
@@ -58,13 +63,13 @@ class ChatDetailActivity : AppCompatActivity() {
             text = text,
             timestamp = System.currentTimeMillis()
         )
+        realtimeDatabase.reference.child("chats").setValue("3").addOnCompleteListener{
+            if (it.isComplete){
+                println("isComplete")
+            } else  {
+                println("nesto ne valja")
+            }
+        }
 
-        db.collection("chats").add(message)
-            .addOnSuccessListener {
-                binding.editTextMessage.text.clear()
-            }
-            .addOnFailureListener {
-                // Handle failure
-            }
     }
 }

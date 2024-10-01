@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment"
+
     android:background="@drawable/pastel">
 
     <!-- Profile Image -->
@@ -57,16 +57,18 @@
     <!-- First Name Data -->
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewFirstName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
         android:layout_marginTop="60dp"
         android:textSize="22sp"
         android:textColor="@color/Navy"
         android:textStyle="italic|bold"
-        android:gravity="center"
+        android:gravity="left"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintStart_toStartOf="@id/guidelineMiddle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/hintFirstName"
         app:layout_constraintTop_toBottomOf="@id/imageViewProfile" />
 
     <!-- Hint for First Name -->
@@ -99,16 +101,18 @@
     <!-- Last Name Data -->
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewLastName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
         android:layout_marginTop="40dp"
         android:textSize="22sp"
         android:textColor="@color/Navy"
         android:textStyle="italic|bold"
-        android:gravity="center"
+        android:gravity="left"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintStart_toStartOf="@id/guidelineMiddle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/hintLastName"
         app:layout_constraintTop_toBottomOf="@id/textViewFirstName" />
 
     <!-- Hint for Last Name -->

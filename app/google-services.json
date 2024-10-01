@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "968663807395",
+    "firebase_url": "https://facebookclone-osnic-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "facebookclone-osnic",
     "storage_bucket": "facebookclone-osnic.appspot.com"
   },

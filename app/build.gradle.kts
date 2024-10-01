@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("com.google.gms.google-services")
+    id("kotlin-parcelize")
+
 }
 android {
     namespace = "com.example.facebookclone"
@@ -43,27 +45,30 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.firebase.analytics)
-    implementation(libs.firebase.auth.ktx)
-    implementation(platform(libs.firebase.bom))
     implementation(libs.material.v140)
-    implementation(libs.firebase.storage.ktx)
-    implementation(libs.google.firebase.firestore.ktx)
-    implementation(libs.firebase.storage)
+// FIREBASE
+    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-messaging-ktx")
+    implementation("com.google.firebase:firebase-database-ktx")
+    implementation("com.google.firebase:firebase-storage-ktx")
+    implementation("com.firebaseui:firebase-ui-database:8.0.1")
+    implementation("com.google.firebase:firebase-firestore-ktx")
 
 
-    implementation(libs.firebase.database)
+
+ //DESIGN
 
     implementation(libs.glide)
     implementation(libs.glide.compiler)
-
     implementation(libs.androidx.exifinterface)
-    
+    implementation (libs.play.services.auth)
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.appcompat)
 
 
-
+// TESTS
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
