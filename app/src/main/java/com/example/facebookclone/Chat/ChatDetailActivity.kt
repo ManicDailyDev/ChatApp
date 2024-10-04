@@ -2,11 +2,15 @@ package com.example.facebookclone.Chat
 
 import android.os.Bundle
 import android.util.Log
+
+import android.app.Activity
+
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.facebookclone.DataClasses.Message
-import com.example.facebookclone.adapter.MessageAdapter
+import com.example.facebookclone.Adapters.MessageAdapter
 import com.example.facebookclone.databinding.ActivityChatBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -26,7 +30,7 @@ class ChatDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Retrieve the passed userId from Intent
-        userId = intent.getStringExtra("userId") ?: return
+        userId = intent.getStringExtra("userId") ?: ""
 
         // Get current user's ID
         currentUserId = FirebaseAuth.getInstance().currentUser?.uid ?: return
@@ -35,17 +39,20 @@ class ChatDetailActivity : AppCompatActivity() {
         binding.recyclerViewMessages.layoutManager = LinearLayoutManager(this)
         messagesAdapter = MessageAdapter()
         binding.recyclerViewMessages.adapter = messagesAdapter
-
         // Initialize Chat Manager to check or create a conversation
         chatManager()
 
         // Handle sending a message
         binding.buttonSendMessage.setOnClickListener {
+
+            Log.d("ChatDetailActivity", "Send message button clicked")
             val messageText = binding.editTextMessage.text.toString().trim()
+
             if (messageText.isNotEmpty()) {
+                Log.d("ChatDetailActivity", "Message text: $messageText")
                 sendMessage(messageText)
             } else {
-                Toast.makeText(this, "Message cannot be empty", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Message cannot be empty", Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -94,7 +101,9 @@ class ChatDetailActivity : AppCompatActivity() {
 
                     // Update the adapter with the loaded messages
                     messagesAdapter.updateMessages(messages)
-                    binding.recyclerViewMessages.scrollToPosition(messages.size - 1) // Scroll to the bottom
+                    if (messages.isNotEmpty()) {
+                        binding.recyclerViewMessages.scrollToPosition(messages.size - 1) // Scroll to the bottom
+                    }
                 }
 
                 override fun onCancelled(error: DatabaseError) {
@@ -116,8 +125,8 @@ class ChatDetailActivity : AppCompatActivity() {
                 Log.d("ChatDetailActivity", "Chat created successfully")
                 loadMessages(chatId) // After creating the chat, load messages
             }
-            .addOnFailureListener {
-                Log.e("ChatDetailActivity", "Failed to create chat")
+            .addOnFailureListener { exception ->
+                Log.e("ChatDetailActivity", "Failed to create chat: ${exception.message}")
             }
     }
 
@@ -137,7 +146,7 @@ class ChatDetailActivity : AppCompatActivity() {
                     binding.editTextMessage.text.clear()
                     Log.d("ChatDetailActivity", "Message sent successfully")
                 } else {
-                    Log.e("ChatDetailActivity", "Failed to send message")
+                    Log.e("ChatDetailActivity", "Failed to send message: ${task.exception?.message}")
                 }
             }
     }

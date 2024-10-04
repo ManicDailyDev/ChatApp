@@ -1,4 +1,4 @@
-package com.example.facebookclone.adapter
+package com.example.facebookclone.Adapters
 
 import android.view.LayoutInflater
 import android.view.View

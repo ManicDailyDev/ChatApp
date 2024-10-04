@@ -3,10 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <!-- Declare data binding variables if needed -->
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -42,15 +38,12 @@
                 android:hint="Type a message"
                 android:inputType="text" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/buttonSendMessage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="Send"
-                android:src="@drawable/button_fragment" />
-
+                android:text="Send" />
         </LinearLayout>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
