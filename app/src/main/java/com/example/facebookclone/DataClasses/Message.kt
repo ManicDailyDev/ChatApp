@@ -6,6 +6,7 @@ import kotlinx.parcelize.Parcelize
 
 data class Message(
     val senderId: String = "",
+    val senderName: String = "",
     val receiverId: String = "",
     val text: String = "",
     val timestamp: Long = 0L,
@@ -15,6 +16,7 @@ data class Message(
     val isDeleted: Boolean = false
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
+        parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),

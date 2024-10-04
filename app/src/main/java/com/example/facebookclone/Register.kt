@@ -89,7 +89,8 @@ class Register : AppCompatActivity() {
                 val userData = hashMapOf(
                     "firstName" to firstName,
                     "lastName" to lastName,
-                    "dob" to dob
+                    "dob" to dob,
+                    "userId" to authResult.user!!.uid
                 )
                 FirebaseFirestore.getInstance()
                     .collection("users")

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -6,20 +5,23 @@
     android:padding="8dp"
     android:gravity="center_vertical">
 
+    <!-- Profile Image -->
     <ImageView
         android:id="@+id/imageViewMessageProfile"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginEnd="16dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/chatlogogog" />
+        android:src="@drawable/chatlogogog" /> <!-- Placeholder image -->
 
+    <!-- Message Content -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical">
 
+        <!-- Sender Name -->
         <TextView
             android:id="@+id/textViewMessageSender"
             android:layout_width="wrap_content"
@@ -27,6 +29,7 @@
             android:text="Sender Name"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
+        <!-- Message Text -->
         <TextView
             android:id="@+id/textViewMessageText"
             android:layout_width="wrap_content"
@@ -34,6 +37,13 @@
             android:text="Message text"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
+        <!-- Image View for images/files (visible only if type is not "text") -->
+        <ImageView
+            android:id="@+id/imageViewMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
     </LinearLayout>
 
 </LinearLayout>
+
