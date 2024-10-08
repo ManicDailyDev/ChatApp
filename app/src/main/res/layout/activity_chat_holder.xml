@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/pastel"
     android:orientation="vertical"
-    tools:context=".Chat.ChatDetailActivity"
+    tools:context=".Chat.ChatActivity"
     >
 
     <!-- Container for fragments -->

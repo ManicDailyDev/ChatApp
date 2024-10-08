@@ -8,7 +8,6 @@ import android.text.TextWatcher
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.facebookclone.Chat.ChatActivity
 
 import com.example.facebookclone.databinding.RegisterActivityBinding
 import com.google.android.material.textfield.TextInputEditText
@@ -107,7 +106,7 @@ class Register : AppCompatActivity() {
                                         baseContext, "Authentication success.",
                                         Toast.LENGTH_LONG
                                     ).show()
-                                    val intent = Intent(this, ChatActivity::class.java)
+                                    val intent = Intent(this, MainActivity::class.java)
                                     startActivity(intent)
                                 } else {
                                     Log.w(

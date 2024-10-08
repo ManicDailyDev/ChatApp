@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.facebookclone.Chat.ChatActivity
 
 import com.example.facebookclone.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -56,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                         baseContext, "Authentication success.",
                         Toast.LENGTH_LONG
                     ).show()
-                    val intent = Intent(this, ChatActivity::class.java)
+                    val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                 } else {
                     Log.w(

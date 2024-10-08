@@ -8,23 +8,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.facebookclone.Chat.ChatDetailActivity
+import com.example.facebookclone.Chat.ChatActivity
 import com.example.facebookclone.DataClasses.User
 import com.example.facebookclone.databinding.FragmentMessageBinding
-import com.google.android.gms.auth.api.Auth
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
-import java.util.UUID
 
-class MessageFragment : Fragment() {
+class ShowAvailableUsersFragment : Fragment() {
 
     private lateinit var binding: FragmentMessageBinding
     private lateinit var db: FirebaseFirestore
     private lateinit var onlineUsersAdapter: OnlineUserAdapter
 
-    private var selected = ""
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,9 +37,16 @@ class MessageFragment : Fragment() {
         db = FirebaseFirestore.getInstance()
         val currentUser = FirebaseAuth.getInstance().currentUser
         val currentUserId = currentUser?.uid ?: ""
+        getME(currentUserId){ it ->
+            println(it?.userId)
+            println(it?.lastName)
+        }
         // Set up RecyclerView with the adapter
         binding.recyclerViewUsers.layoutManager = LinearLayoutManager(context)
-        onlineUsersAdapter = OnlineUserAdapter { user -> openChatWithUser(user) }
+        onlineUsersAdapter = OnlineUserAdapter { user ->
+            println(user.userId)
+            println(user.lastName)
+        }
         binding.recyclerViewUsers.adapter = onlineUsersAdapter
 
 
@@ -60,12 +65,22 @@ class MessageFragment : Fragment() {
                 Toast.makeText(context, "Error fetching users", Toast.LENGTH_SHORT).show()
                 Log.e("MessageFragment", "Error fetching users", exception)
             }
-        println(currentUserId.toString() + "kurchina")
+    }
+    fun getME(id: String, callback: (User?) -> Unit) {
+        db.collection("users").document(id).get().addOnCompleteListener { task ->
+            if (task.isSuccessful) {
 
+                val user = task.result?.toObject(User::class.java)
+
+                callback(user)
+            } else {
+
+                callback(null)
+            }
+        }
     }
 
     private fun openChatWithUser(user: User) {
-        println(user.toString() + "user")
         val currentUser = FirebaseAuth.getInstance().currentUser
         val currentUserId = currentUser?.uid ?: ""
 
@@ -157,7 +172,7 @@ class MessageFragment : Fragment() {
 
     private fun openChatDetailActivity(chatId: String) {
         // Navigate to the ChatDetailActivity, passing the chatId
-        val intent = Intent(context, ChatDetailActivity::class.java).apply {
+        val intent = Intent(context, ChatActivity::class.java).apply {
             putExtra("chatId", chatId)
         }
         startActivity(intent)

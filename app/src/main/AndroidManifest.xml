@@ -41,7 +41,7 @@
         <!-- Other Activities -->
         <activity android:name=".Register" />
         <activity android:name=".Chat.ChatActivity" />
-        <activity android:name=".Chat.ChatDetailActivity" />
+        <activity android:name=".Chat.ChatActivity" />
 
         <!-- Ensure the Firebase Messaging Service is declared if using FCM -->
         <!-- Uncomment and modify if you are using Firebase Messaging -->
