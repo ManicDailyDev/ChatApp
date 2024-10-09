@@ -30,7 +30,7 @@
 
         <!-- Main Activity -->
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,20 +39,8 @@
         </activity>
 
         <!-- Other Activities -->
-        <activity android:name=".Register" />
-        <activity android:name=".Chat.ChatActivity" />
-        <activity android:name=".Chat.ChatActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".MainActivity"/>
 
-        <!-- Ensure the Firebase Messaging Service is declared if using FCM -->
-        <!-- Uncomment and modify if you are using Firebase Messaging -->
-        <!--
-        <service
-            android:name=".YourFirebaseMessagingService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
-        -->
     </application>
 </manifest>

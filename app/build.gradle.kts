@@ -69,6 +69,10 @@ dependencies {
     implementation(libs.androidx.exifinterface)
     implementation(libs.play.services.auth) // Ensure the Play services are up to date
     implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.fragment.ktx)
 
     // TESTS
     testImplementation(libs.junit)
