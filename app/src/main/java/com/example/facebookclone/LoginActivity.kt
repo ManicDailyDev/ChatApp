@@ -8,18 +8,19 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import androidx.appcompat.app.AppCompatActivity
 import com.example.facebookclone.databinding.ActivityLogInBinding
+import com.example.facebookclone.utils.FirebaseManager
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLogInBinding
-    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLogInBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         /* firebase */
-        auth = FirebaseAuth.getInstance()
+
 
         /* bindings */
         binding.usernameEditText1.text.toString()
@@ -43,10 +44,9 @@ class LoginActivity : AppCompatActivity() {
     private fun login() {
         val email = binding.usernameEditText1.text.toString()
         val password = binding.passwordEditText1.text.toString()
-        auth.signInWithEmailAndPassword(email, password)
+        FirebaseManager().firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success
                     Log.d(TAG, "signInWithEmail:success")
                     Toast.makeText(baseContext, "Authentication success.", Toast.LENGTH_SHORT)
                         .show()
@@ -54,7 +54,6 @@ class LoginActivity : AppCompatActivity() {
                     startActivity(intent)
                     finish()
                 } else {
-                    // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithEmail:failure", task.exception)
                     Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT)
                         .show()
