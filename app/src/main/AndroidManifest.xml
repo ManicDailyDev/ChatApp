@@ -41,6 +41,7 @@
         <!-- Other Activities -->
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity"/>
+        <activity android:name=".ForgotPasswordActivity"/>
 
     </application>
 </manifest>

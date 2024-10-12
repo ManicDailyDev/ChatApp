@@ -2,16 +2,17 @@ package com.example.facebookclone.DataClasses
 
 import android.os.Parcel
 import android.os.Parcelable
-import java.net.URL
 
 data class User(
     var userId:String = "",
     var email:String = "",
+    var password:String = "",
     var firstName:String = "",
     var lastName:String = "",
     var dateofbirth:String = "",
 ):Parcelable {
     constructor(parcel: Parcel) : this(
+        parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),
@@ -23,6 +24,7 @@ data class User(
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(userId)
         parcel.writeString(email)
+        parcel.writeString(password)
         parcel.writeString(firstName)
         parcel.writeString(lastName)
         parcel.writeString(dateofbirth)

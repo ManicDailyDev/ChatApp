@@ -9,7 +9,7 @@
     tools:context=".RegisterActivity">
     <!-- IMAGE -->
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ImageViewRegister"
+        android:id="@+id/imageViewRegister"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
@@ -21,7 +21,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- EMAILS -->
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailTextLayout"
         android:layout_width="300dp"
@@ -36,10 +35,10 @@
         app:helperTextTextAppearance="@color/Red"
         app:helperTextTextColor="@color/green"
         app:hintTextColor="@color/MidnightBlue"
-        app:layout_constraintBottom_toTopOf="@id/emailconformTextLayout"
+        app:layout_constraintBottom_toTopOf="@id/conformEmailTextLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ImageViewRegister">
+        app:layout_constraintTop_toBottomOf="@id/imageViewRegister">
 
         <com.google.android.material.textfield.TextInputEditText
 
@@ -55,7 +54,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailconformTextLayout"
+        android:id="@+id/conformEmailTextLayout"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginTop="5dp"
@@ -74,7 +73,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
 
-            android:id="@+id/emailconfirmEditText"
+            android:id="@+id/confirmEmailEditText"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:background="@drawable/rounded_edittext_background"
@@ -88,7 +87,7 @@
 
     <!-- First Name -->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/FirstNameTextLayout"
+        android:id="@+id/firstNameTextLayout"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -100,10 +99,10 @@
         app:helperTextTextColor="@color/green"
         app:hintTextColor="@color/MidnightBlue"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/DatePicker">
+        app:layout_constraintTop_toBottomOf="@id/datePicker">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/FirstNameEditText"
+            android:id="@+id/firstNameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_edittext_background"
@@ -116,7 +115,7 @@
 
     <!-- Last Name -->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/LastNameTextLyout"
+        android:id="@+id/lastNameTextLyout"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
@@ -128,10 +127,10 @@
         app:helperTextTextColor="@color/green"
         app:hintTextColor="@color/MidnightBlue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/DatePicker">
+        app:layout_constraintTop_toBottomOf="@id/datePicker">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/LastNameEditText"
+            android:id="@+id/lastNameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_edittext_background"
@@ -144,22 +143,21 @@
 
 
     <!-- AGE -->
-
     <TextView
-        android:id="@+id/DatePickerTextView"
+        android:id="@+id/datePickerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Select your date of birth"
         android:textColor="@color/Blue"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@id/DatePicker"
+        app:layout_constraintBottom_toTopOf="@id/datePicker"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/LastNameTextLyout" />
+        app:layout_constraintTop_toBottomOf="@id/lastNameTextLyout" />
 
     <DatePicker
-        android:id="@+id/DatePicker"
+        android:id="@+id/datePicker"
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:calendarViewShown="false"
@@ -167,15 +165,15 @@
         android:spinnersShown="true"
         android:textAlignment="center"
         android:calendarTextColor="@color/Blue"
-        app:layout_constraintBottom_toTopOf="@id/PasswordTextLayout"
+        app:layout_constraintBottom_toTopOf="@id/passwordTextLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/DatePickerTextView" />
+        app:layout_constraintTop_toBottomOf="@id/datePickerTextView" />
 
 
     <!-- PASSWORDS -->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/PasswordTextLayout"
+        android:id="@+id/passwordTextLayout"
         android:layout_width="250dp"
         android:layout_height="80dp"
         android:layout_marginVertical="90dp"
@@ -189,10 +187,10 @@
         app:hintTextColor="@color/MidnightBlue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DatePicker">
+        app:layout_constraintTop_toBottomOf="@+id/datePicker">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/PasswordRegisterEditText"
+            android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/rounded_edittext_background"
@@ -206,7 +204,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/PasswordConfirmTextLayout"
+        android:id="@+id/passwordConfirmTextLayout"
         android:layout_width="250dp"
         android:layout_height="80dp"
         android:layout_marginBottom="40dp"
@@ -221,10 +219,10 @@
         app:layout_constraintBottom_toTopOf="@id/RegisterButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PasswordTextLayout">
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/PasswordConfirmRegisterEditText"
+            android:id="@+id/confirmPasswordEditText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/rounded_edittext_background"
@@ -239,9 +237,8 @@
 
 
     <!-- BUTTONS -->
-
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/AlreadyHaveAccountButton"
+        android:id="@+id/alreadyHaveAccountButton"
         android:layout_width="250dp"
         android:layout_height="25dp"
         android:background="@android:color/transparent"
@@ -252,7 +249,7 @@
         app:layout_constraintBottom_toTopOf="@id/RegisterButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PasswordConfirmTextLayout"
+        app:layout_constraintTop_toBottomOf="@+id/passwordConfirmTextLayout"
         app:layout_goneMarginTop="10dp" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -266,7 +263,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AlreadyHaveAccountButton"
+        app:layout_constraintTop_toBottomOf="@+id/alreadyHaveAccountButton"
         app:layout_goneMarginTop="10dp" />
 
 
