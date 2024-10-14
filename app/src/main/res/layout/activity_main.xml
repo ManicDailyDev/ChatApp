@@ -11,10 +11,10 @@
 
     <!-- Container for fragments -->
     <FrameLayout
-        android:id="@+id/container"
+        android:id="@+id/frameLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/bottomnavigationbuttons"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +23,7 @@
 
     <!-- Bottom Navigation View -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomnavigationbuttons"
+        android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="62dp"
         app:itemIconSize="15dp"

@@ -20,14 +20,14 @@ class ForgotPasswordActivity : AppCompatActivity() {
         binding = ActivityForgotPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.forgotPasswordButton.setOnClickListener { beginRecovery(binding.forgotPasswordEditText.text.toString()) }
+        binding.resetPasswordButton.setOnClickListener { beginRecovery(binding.resetPasswordButton.text.toString()) }
     }
 
     fun beginRecovery(email: String?) {
         FirebaseManager().firebaseAuth.fetchSignInMethodsForEmail(email!!)
             .addOnCompleteListener { checkTask ->
                 if (checkTask.isSuccessful) {
-                    FirebaseManager().firebaseAuth.sendPasswordResetEmail(binding.forgotPasswordEditText.text.toString())
+                    FirebaseManager().firebaseAuth.sendPasswordResetEmail(binding.resetPasswordButton.text.toString())
                         .addOnCompleteListener(this) { task ->
                             if (task.isSuccessful) {
                                 Log.d(TAG, "forgot password:success")

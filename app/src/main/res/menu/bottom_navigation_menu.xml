@@ -5,15 +5,15 @@
         android:id="@+id/profile"
         android:icon="@android:drawable/ic_menu_more"
         android:enabled="true"
-        android:title="Profile" />
+        android:title="@string/profile" />
     <item
         android:id="@+id/message"
         android:enabled="true"
         android:icon="@android:drawable/ic_menu_more"
-        android:title="Message" />
+        android:title="@string/message" />
     <item
         android:id="@+id/group"
         android:enabled="true"
         android:icon="@android:drawable/ic_menu_more"
-        android:title="Group Chat" />
+        android:title="@string/group_chat" />
 </menu>

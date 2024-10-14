@@ -22,16 +22,24 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
         prefSingleton = PrefSingleton(this)
 
+        /*
+        userLoginChecker
+        */
+
 //        userLoginChecker()
 
+        /*
+        userLoginChecker
+        */
+
         /*buttons*/
-        binding.loginButton1.setOnClickListener { login() }
-        binding.registerherebutton.setOnClickListener {
+        binding.logInButton.setOnClickListener { login() }
+        binding.signupHereButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
             finish()
         }
-        binding.forgotpasswordbutton.setOnClickListener {
+        binding.forgotPasswordButton.setOnClickListener {
             val intent = Intent(this, ForgotPasswordActivity::class.java)
             startActivity(intent)
             finish()
@@ -42,8 +50,8 @@ class LoginActivity : AppCompatActivity() {
     /* LOG_IN */
     private fun login() {
         FirebaseManager().firebaseAuth.signInWithEmailAndPassword(
-            binding.usernameEditText1.text.toString(),
-            binding.passwordEditText1.text.toString()
+            binding.logInUserNameEditText.text.toString(),
+            binding.logInPasswordEditText.text.toString()
         )
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
