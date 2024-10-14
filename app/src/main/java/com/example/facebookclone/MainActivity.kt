@@ -13,32 +13,22 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         replaceFragment(ProfileFragment())
 
-
-
-
         binding.bottomNav.setOnItemSelectedListener {
-
             when (it.itemId) {
-
                 R.id.profile -> replaceFragment(ProfileFragment())
                 R.id.message -> replaceFragment(ChatFragment())
                 R.id.group -> replaceFragment(GroupFragment())
                 else -> {
-
-
                 }
             }
             true
         }
-
-
     }
 
     private fun replaceFragment(fragment: Fragment) {
@@ -46,7 +36,6 @@ class MainActivity : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frameLayout, fragment)
         fragmentTransaction.commit()
-
     }
 }
 
