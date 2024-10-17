@@ -3,6 +3,7 @@ package com.example.facebookclone.utils
 import android.app.Activity
 import android.widget.EditText
 import android.widget.Toast
+import com.example.facebookclone.Fragment.ProfileFragment
 import com.google.android.material.textfield.TextInputEditText
 
 object Extensions {
@@ -58,7 +59,7 @@ object Extensions {
 
     }
 
-     fun displayToast(message:String,context:Activity){
+     fun displayToast(message:String, context: Activity){
         Toast.makeText(context,message, Toast.LENGTH_SHORT).show()
     }
 }

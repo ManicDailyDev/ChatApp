@@ -9,7 +9,7 @@
     tools:context=".RegisterActivity">
     <!-- IMAGE -->
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageViewRegister"
+        android:id="@+id/registerImageView"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
@@ -35,10 +35,10 @@
         app:helperTextTextAppearance="@color/Red"
         app:helperTextTextColor="@color/green"
         app:hintTextColor="@color/MidnightBlue"
-        app:layout_constraintBottom_toTopOf="@id/conformEmailTextLayout"
+        app:layout_constraintBottom_toTopOf="@id/emailConfirmTextLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageViewRegister">
+        app:layout_constraintTop_toBottomOf="@id/registerImageView">
 
         <com.google.android.material.textfield.TextInputEditText
 
@@ -54,7 +54,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/conformEmailTextLayout"
+        android:id="@+id/emailConfirmTextLayout"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginTop="5dp"
@@ -73,7 +73,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
 
-            android:id="@+id/confirmEmailEditText"
+            android:id="@+id/emailConfirmEditText"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:background="@drawable/rounded_edittext_background"
@@ -222,7 +222,7 @@
         app:layout_constraintTop_toBottomOf="@+id/passwordTextLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/confirmPasswordEditText"
+            android:id="@+id/PasswordConfirmEditText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/rounded_edittext_background"

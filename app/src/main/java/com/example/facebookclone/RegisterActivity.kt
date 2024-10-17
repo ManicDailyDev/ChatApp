@@ -31,12 +31,12 @@ class RegisterActivity : AppCompatActivity() {
             if (Extensions.checker(
                     arrayListOf(
                         binding.emailEditText,
-                        binding.confirmEmailEditText,
+                        binding.emailConfirmEditText,
                         binding.firstNameEditText,
                         binding.lastNameEditText,
                         binding.passwordEditText,
-                        binding.confirmPasswordEditText
-                    ), binding.emailEditText, binding.confirmEmailEditText, this@RegisterActivity
+                        binding.passwordEditText
+                    ), binding.emailEditText, binding.emailConfirmEditText, this@RegisterActivity
                 )
             ) {
                 setupUser()

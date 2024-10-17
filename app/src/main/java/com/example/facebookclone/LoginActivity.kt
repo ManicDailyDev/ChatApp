@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
         userLoginChecker
         */
 
-//        userLoginChecker()
+        userLoginChecker()
 
         /*
         userLoginChecker

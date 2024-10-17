@@ -155,16 +155,32 @@
         app:layout_constraintStart_toStartOf="@id/guidelineMiddle"
         app:layout_constraintTop_toBottomOf="@id/textViewLastName" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        app:layout_constraintBottom_toTopOf="@+id/developerInfoProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="250dp"
+        android:id="@+id/singoutButton"
+        android:layout_height="25dp"
+        android:background="@android:color/transparent"
+        android:text="Sing Out!"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:textColor="@color/Crimson"
+
+        />
+
     <!-- Developer Info -->
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="20dp"
+        android:id="@+id/developerInfoProfile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:text="Developed by Marko Manic"
         android:textAlignment="center"
-        android:textColor="@color/Blue"
+        android:textColor="@color/CadetBlue"
         android:textStyle="italic" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

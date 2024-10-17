@@ -18,6 +18,9 @@ class FirebaseManager {
 
     }
 
+    fun singOutUser(){
+    firebaseAuth.signOut()
+    }
 
 
 

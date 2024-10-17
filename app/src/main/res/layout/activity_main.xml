@@ -26,7 +26,7 @@
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="62dp"
-        app:itemIconSize="15dp"
+        app:itemIconSize="10dp"
         app:itemBackground="@drawable/edit_text_background"
         app:itemHorizontalTranslationEnabled="true"
         app:itemTextColor="@color/Blue"
